@@ -1,7 +1,7 @@
 /* 1. Fondo de la pantalla */
 /* 1. Fondo de la pantalla modificado */
 body {
-    background-color: #E2B6E6; /* Tu nuevo fondo rosado */
+    background-color: #0d2a3d; /* Tu nuevo fondo rosado */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
     justify-content: center;
@@ -76,15 +76,47 @@ body {
     transform-origin: left;
 }
 
-/* 4. Estilo único para la Portada */
+/* 4. Estilo único para la Portada con Imagen de Fondo */
 .portada {
-    background-color: #2c3e50; /* Azul oscuro */
+    /* Cargamos tu imagen local */
+    background-image: url('img/Portada.png'); 
+    
+    /* Propiedades clave para que la imagen se adapte perfectamente: */
+    background-size: cover;       /* Estira y adapta la imagen para que cubra toda la portada sin deformarse */
+    background-position: center;   /* Centra la imagen para que no se corte por los lados */
+    background-repeat: no-repeat;  /* Evita que la imagen se duplique como un mosaico */
+
     color: white;
-    text-align: center;
+    box-sizing: border-box;
+    padding: 35px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: center; /* Centra el título verticalmente */
+    position: relative; /* Base para el mensaje "desliza" */
 }
+
+/* Título 1.5 veces más grande, en 3 líneas y pegado al margen izquierdo */
+.titulo-portada {
+    color:#286091;
+    text-align: left; /* Pegado al margen horizontal izquierdo */
+    margin: 0;
+    font-size: 3.0rem; /* Aumentado 1.5 veces (de 2.5rem a 3.75rem) */
+    line-height: 1; /* Mantiene las tres líneas compactas y estéticas */
+    font-family: 'Cinzel Decorative', Georgia, serif;
+}
+
+/* Mensaje en la esquina inferior derecha aumentado 1.5 veces */
+.mensaje-desliza {
+    color:#2f4f64;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 10px; /* Tu margen de seguridad */
+    font-size: 1.0rem; /* Aumentado 1.5 veces (de 0.85rem a 1.25rem) */
+    opacity: 0.9;
+    font-weight: 500;
+}
+
 
 /* 5. Nueva regla para la Contraportada */
 .contraportada {
