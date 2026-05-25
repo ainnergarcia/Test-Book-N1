@@ -1,12 +1,35 @@
 /* 1. Fondo de la pantalla */
+/* 1. Fondo de la pantalla modificado */
 body {
-    background-color: #e0dcd3; /* Color arena de fondo */
+    background-color: #E2B6E6; /* Tu nuevo fondo rosado */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
+    
+    /* Añadimos un pequeño espacio interno global para que si el libro */
+    /* es muy grande en pantallas pequeñas, nunca toque los bordes del móvil */
+    padding: 20px; 
+    box-sizing: border-box;
+}
+
+/* 2. El contenedor del libro adaptado para móviles */
+#libro {
+    /* Usamos max-width en lugar de width fijo para que el libro */
+    /* se encoja elegantemente si la pantalla del teléfono es muy angosta */
+    width: 100%;
+    max-width: 380px; 
+    height: 500px;
+    position: relative;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+    
+    /* ACTIVADORES 3D */
+    perspective: 1200px;
+    transform-style: preserve-3d;
+    cursor: grab;
+    will-change: transform;
 }
 
 /* 2. El contenedor del libro */
