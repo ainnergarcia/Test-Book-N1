@@ -134,7 +134,7 @@ body {
 }
 
 .pagina p {
-    font-size: 1.3vw; /* ⚠️ Ajusta este número. En el teléfono se encogerá automáticamente para caber en la pantalla */
+    font-size: 1.2vw; /* ⚠️ Ajusta este número. En el teléfono se encogerá automáticamente para caber en la pantalla */
     text-align: justify;
     line-height: 1.4;
 }
