@@ -141,7 +141,7 @@ body {
 
 
 .Comienzo {
-    background-image: url('img/Rosa.png') !important; /* ⚠️ Cambia esto por el nombre exacto de tu archivo */
+    background-image: url('img/Rosa.PNG') !important; /* ⚠️ Cambia esto por el nombre exacto de tu archivo */
     background-size: 100%;                /* Controla el tamaño de la rosa (60% de la página se ve genial) */
     background-position: bottom center;   /* Ubica la rosa abajo y centrada para que no tape el título */
     background-repeat: no-repeat;        /* Evita que la imagen se duplique */
