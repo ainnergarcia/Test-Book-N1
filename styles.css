@@ -181,6 +181,27 @@ body {
     /* 4. Suavizado de fuentes si el navegador procesa el texto de forma interna */
     -webkit-font-smoothing: antialiased !important;
     -moz-osx-font-smoothing: grayscale !important;
+
+
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    
+    /* --- EL CAMBIO CLAVE --- */
+    /* 'contain' obliga a que TODA la imagen se vea completa dentro del margen blanco, sin recortar nada */
+    object-fit: contain !important; 
+    object-position: center !important;
+    z-index: 1 !important;
+
+    /* Tu marco blanco invisible */
+    box-sizing: border-box !important;
+    border: 20px solid #ffffff !important;
+    background-color: #ffffff !important;
+
+}
+    
 }
 
 
