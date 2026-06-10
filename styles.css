@@ -140,9 +140,49 @@ body {
 }
 
 
-.Comienzo {
-    background-image: url('Imag/Comienzo.png'); /* ⚠️ Cambia esto por el nombre exacto de tu archivo */
-    background-size: 100%;                /* Controla el tamaño de la rosa (60% de la página se ve genial) */
-    background-position: bottom center;   /* Ubica la rosa abajo y centrada para que no tape el título */
-    background-repeat: no-repeat;        /* Evita que la imagen se duplique */
+
+
+.imagen-texto {
+    /* 1. Posicionamiento absoluto para ignorar los márgenes de la página */
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    
+    /* 2. Obliga a medir el 100% exacto de la hoja blanca */
+    width: 100% !important;
+    height: 100% !important;
+    
+    /* 3. Evita que el texto dentro de la imagen se deforme */
+    object-fit: cover !important;
+    object-position: center !important;
+    
+    /* 4. Mantiene la nitidez que ya logramos */
+    image-rendering: -webkit-optimize-contrast !important;
+    image-rendering: pixelated !important;
+    transform: translateZ(0) !important;
+
+
+    /* 2. EL NUEVO FILTRO DE CALIDAD (Reemplaza al pixelated) */
+    /* Le dice a Edge, Opera y Chrome que suavice usando interpolación de alta calidad */
+    image-rendering: auto !important; 
+    
+    /* Fuerza un algoritmo que busca el contraste nítido sin pixelar */
+    image-rendering: -webkit-optimize-contrast !important;
+
+    /* 3. TRUCO DE REESCALADO VECTORIAL (Suaviza los bordes de forma limpia) */
+    /* Al aplicar una rotación invisible de 0.01 grados, obligas al motor gráfico */
+    /* a usar un renderizado subpíxel de alta fidelidad, eliminando la borrosidad */
+    transform: translateZ(0) rotate(0.01deg) scale(1.0) !important;
+    
+    /* Estabilizadores de hardware para pantallas de alta densidad (Retina/OLED) */
+    -webkit-backface-visibility: hidden !important;
+    backface-visibility: hidden !important;
+    
+    /* 4. Suavizado de fuentes si el navegador procesa el texto de forma interna */
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+}
+
+
+
 }
