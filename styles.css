@@ -99,6 +99,19 @@ body {
     position: relative; /* Base para el mensaje "desliza" */
 }
 
+.Contraportada {
+    /* Cargamos tu imagen local */
+    background-image: url('img/Contraportada.png'); 
+    
+    /* Propiedades clave para que la imagen se adapte perfectamente: */
+    background-size: cover;       /* Estira y adapta la imagen para que cubra toda la portada sin deformarse */
+    background-position: center;   /* Centra la imagen para que no se corte por los lados */
+    background-repeat: no-repeat;  /* Evita que la imagen se duplique como un mosaico */
+
+}
+
+
+
 /* Título 1.5 veces más grande, en 3 líneas y pegado al margen izquierdo */
 .titulo-portada {
     color:#286091;
@@ -143,65 +156,38 @@ body {
 
 
 .imagen-texto {
-    /* 1. Posicionamiento absoluto para ignorar los márgenes de la página */
-    position: absolute !important;
-    top: 0 !important;
-    left: 0 !important;
-    
+
     /* 2. Obliga a medir el 100% exacto de la hoja blanca */
-    width: 100% !important;
-    height: 100% !important;
-    
-    /* 3. Evita que el texto dentro de la imagen se deforme */
-    object-fit: cover !important;
-    object-position: center !important;
-    
-    /* 4. Mantiene la nitidez que ya logramos */
-    image-rendering: -webkit-optimize-contrast !important;
-    image-rendering: pixelated !important;
-    transform: translateZ(0) !important;
-
-
-    /* 2. EL NUEVO FILTRO DE CALIDAD (Reemplaza al pixelated) */
-    /* Le dice a Edge, Opera y Chrome que suavice usando interpolación de alta calidad */
-    image-rendering: auto !important; 
-    
-    /* Fuerza un algoritmo que busca el contraste nítido sin pixelar */
-    image-rendering: -webkit-optimize-contrast !important;
-
-    /* 3. TRUCO DE REESCALADO VECTORIAL (Suaviza los bordes de forma limpia) */
-    /* Al aplicar una rotación invisible de 0.01 grados, obligas al motor gráfico */
-    /* a usar un renderizado subpíxel de alta fidelidad, eliminando la borrosidad */
-    transform: translateZ(0) rotate(0.01deg) scale(1.0) !important;
-    
-    /* Estabilizadores de hardware para pantallas de alta densidad (Retina/OLED) */
-    -webkit-backface-visibility: hidden !important;
-    backface-visibility: hidden !important;
-    
-    /* 4. Suavizado de fuentes si el navegador procesa el texto de forma interna */
-    -webkit-font-smoothing: antialiased !important;
-    -moz-osx-font-smoothing: grayscale !important;
-
-
+    width: 80% !important;
+    height: 80% !important;
+  /* 1. POSICIONAMIENTO DESDE EL CENTRO EXACTO */
     position: absolute !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
+    top: 50% !important;   /* Mueve el inicio de la imagen a la mitad vertical */
+    left: 50% !important;  /* Mueve el inicio de la imagen a la mitad horizontal */
     
-    /* --- EL CAMBIO CLAVE --- */
-    /* 'contain' obliga a que TODA la imagen se vea completa dentro del margen blanco, sin recortar nada */
-    object-fit: contain !important; 
+    /* El truco definitivo: Desplaza la imagen un -50% de su propio tamaño */
+    /* Esto hace que su centro coincida perfectamente con el centro de la página */
+    transform: translate(-50%, -50%) rotate(0.01deg) !important;
+    
+    /* 2. CONTROL PRINCIPAL DE TAMAÑO (Para expandir o reducir) */
+    /* Modifica estos dos porcentajes juntos para controlar el zoom desde el centro */
+    width: 90% !important;   /* Al bajarlo de 100% a 90%, se reduce dejando aire */
+    height: 90% !important;  /* Mantén ambos valores iguales para no deformar */
+    
+    /* 3. AJUSTE INTERNO SIN RECORTES */
+    object-fit: contain !important;
     object-position: center !important;
     z-index: 1 !important;
 
-    /* Tu marco blanco invisible */
+    /* 4. MARCO BLANCO QUE SE MEZCLA CON LA HOJA */
     box-sizing: border-box !important;
-    border: 20px solid #ffffff !important;
     background-color: #ffffff !important;
 
-}
-    
+    /* 5. FILTROS DE ALTA CALIDAD Y NITIDEZ */
+    image-rendering: auto !important;
+    image-rendering: -webkit-optimize-contrast !important;
+    -webkit-backface-visibility: hidden !important;
+    backface-visibility: hidden !important;
 }
 
 
