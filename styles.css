@@ -158,8 +158,8 @@ body {
 .imagen-texto {
 
     /* 2. Obliga a medir el 100% exacto de la hoja blanca */
-    width: 90% !important;
-    height: 90% !important;
+    width: 95% !important;
+    height: 95% !important;
   /* 1. POSICIONAMIENTO DESDE EL CENTRO EXACTO */
     position: absolute !important;
     top: 50% !important;   /* Mueve el inicio de la imagen a la mitad vertical */
